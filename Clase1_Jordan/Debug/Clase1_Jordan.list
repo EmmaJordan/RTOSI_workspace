@@ -3711,14 +3711,14 @@ int main(void)
 			BSP_LED_On(LED1);
  8001832:	2000      	movs	r0, #0
  8001834:	f7fe feac 	bl	8000590 <BSP_LED_On>
-			HAL_Delay(200);
- 8001838:	20c8      	movs	r0, #200	; 0xc8
+			HAL_Delay(150);
+ 8001838:	2096      	movs	r0, #150	; 0x96
  800183a:	f7ff f819 	bl	8000870 <HAL_Delay>
 			BSP_LED_Off(LED1);
  800183e:	2000      	movs	r0, #0
  8001840:	f7fe fec0 	bl	80005c4 <BSP_LED_Off>
-			HAL_Delay(600);
- 8001844:	f44f 7016 	mov.w	r0, #600	; 0x258
+			HAL_Delay(1000);
+ 8001844:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8001848:	f7ff f812 	bl	8000870 <HAL_Delay>
 		if(BSP_PB_GetState(BUTTON_USER)){
  800184c:	e7eb      	b.n	8001826 <main+0x1a>
