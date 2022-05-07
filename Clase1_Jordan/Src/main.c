@@ -72,7 +72,7 @@ int main(void)
 			BSP_LED_On(LED1);
 			HAL_Delay(100);
 			BSP_LED_Off(LED1);
-			HAL_Delay(100);
+			HAL_Delay(300);
 
 		}
 	}
