@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
+# Toolchain: GNU Tools for STM32 (10.3-2021.10)
 ################################################################################
 
 -include ../makefile.init
@@ -16,7 +16,6 @@ RM := rm -rf
 -include Drivers/Core/Src/subdir.mk
 -include Drivers/CMSIS/subdir.mk
 -include Drivers/BSP/STM32F4xx_Nucleo_144/subdir.mk
--include subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -39,34 +38,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Ej1_pushButton
+BUILD_ARTIFACT_NAME := Clase1_RTOSI_Jordan
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Ej1_pushButton.elf \
+Clase1_RTOSI_Jordan.elf \
+
+MAP_FILES += \
+Clase1_RTOSI_Jordan.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Ej1_pushButton.list \
-
-OBJCOPY_BIN += \
-Ej1_pushButton.bin \
+Clase1_RTOSI_Jordan.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: Ej1_pushButton.elf secondary-outputs
+main-build: Clase1_RTOSI_Jordan.elf secondary-outputs
 
 # Tool invocations
-Ej1_pushButton.elf: $(OBJS) $(USER_OBJS) /home/pato/Embebidos/CESE/PdM_workspace/Ej1_pushButton/STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Ej1_pushButton.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/pato/Embebidos/CESE/PdM_workspace/Ej1_pushButton/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ej1_pushButton.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Clase1_RTOSI_Jordan.elf Clase1_RTOSI_Jordan.map: $(OBJS) $(USER_OBJS) C:\Users\Win10\Desktop\Repo_RTOSI_Jordan\RTOSI_workspace\Clase1_Jordan\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Clase1_RTOSI_Jordan.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Win10\Desktop\Repo_RTOSI_Jordan\RTOSI_workspace\Clase1_Jordan\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Clase1_RTOSI_Jordan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -75,22 +74,17 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Ej1_pushButton.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Ej1_pushButton.list"
-	@echo 'Finished building: $@'
-	@echo ' '
-
-Ej1_pushButton.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Ej1_pushButton.bin"
+Clase1_RTOSI_Jordan.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Clase1_RTOSI_Jordan.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) Ej1_pushButton.elf
+	-$(RM) Clase1_RTOSI_Jordan.elf Clase1_RTOSI_Jordan.list Clase1_RTOSI_Jordan.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
@@ -99,6 +93,6 @@ fail-specified-linker-script-missing:
 warn-no-linker-script-specified:
 	@echo 'Warning: No linker script specified. Check the linker settings in the build configuration.'
 
-.PHONY: all clean dependents fail-specified-linker-script-missing warn-no-linker-script-specified
+.PHONY: all clean dependents main-build fail-specified-linker-script-missing warn-no-linker-script-specified
 
 -include ../makefile.targets
