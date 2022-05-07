@@ -70,10 +70,9 @@ int main(void)
 	{
 		if(BSP_PB_GetState(BUTTON_USER)){
 			BSP_LED_On(LED1);
-			HAL_Delay(100);
+			HAL_Delay(200);
 			BSP_LED_Off(LED1);
-			HAL_Delay(300);
-
+			HAL_Delay(600);
 		}
 	}
 }

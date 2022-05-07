@@ -38,34 +38,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Clase1_RTOSI_Jordan
+BUILD_ARTIFACT_NAME := Clase1_Jordan
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Clase1_RTOSI_Jordan.elf \
+Clase1_Jordan.elf \
 
 MAP_FILES += \
-Clase1_RTOSI_Jordan.map \
+Clase1_Jordan.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Clase1_RTOSI_Jordan.list \
+Clase1_Jordan.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: Clase1_RTOSI_Jordan.elf secondary-outputs
+main-build: Clase1_Jordan.elf secondary-outputs
 
 # Tool invocations
-Clase1_RTOSI_Jordan.elf Clase1_RTOSI_Jordan.map: $(OBJS) $(USER_OBJS) C:\Users\Win10\Desktop\Repo_RTOSI_Jordan\RTOSI_workspace\Clase1_Jordan\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Clase1_RTOSI_Jordan.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Win10\Desktop\Repo_RTOSI_Jordan\RTOSI_workspace\Clase1_Jordan\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Clase1_RTOSI_Jordan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Clase1_Jordan.elf Clase1_Jordan.map: $(OBJS) $(USER_OBJS) C:\Users\Win10\Desktop\Repositorios\ CESE\Repo_RTOSI_Jordan\RTOSI_workspace\Clase1_Jordan\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Clase1_Jordan.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Win10\Desktop\Repositorios CESE\Repo_RTOSI_Jordan\RTOSI_workspace\Clase1_Jordan\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Clase1_Jordan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -74,14 +74,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Clase1_RTOSI_Jordan.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Clase1_RTOSI_Jordan.list"
+Clase1_Jordan.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Clase1_Jordan.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) Clase1_RTOSI_Jordan.elf Clase1_RTOSI_Jordan.list Clase1_RTOSI_Jordan.map default.size.stdout
+	-$(RM) Clase1_Jordan.elf Clase1_Jordan.list Clase1_Jordan.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

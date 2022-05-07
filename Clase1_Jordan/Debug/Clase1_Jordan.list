@@ -1,5 +1,5 @@
 
-Clase1_RTOSI_Jordan.elf:     file format elf32-littlearm
+Clase1_Jordan.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  00024d03  00000000  00000000  00026250  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   000073ec  00000000  00000000  0004af53  2**0
+ 18 .debug_line   000076f2  00000000  00000000  0004af53  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000e0cac  00000000  00000000  0005233f  2**0
+ 19 .debug_str    000e0cbe  00000000  00000000  00052645  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  00132feb  2**0
+ 20 .comment      00000050  00000000  00000000  00133303  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00001114  00000000  00000000  0013303c  2**2
+ 21 .debug_frame  00001114  00000000  00000000  00133354  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -3711,14 +3711,14 @@ int main(void)
 			BSP_LED_On(LED1);
  8001832:	2000      	movs	r0, #0
  8001834:	f7fe feac 	bl	8000590 <BSP_LED_On>
-			HAL_Delay(100);
- 8001838:	2064      	movs	r0, #100	; 0x64
+			HAL_Delay(200);
+ 8001838:	20c8      	movs	r0, #200	; 0xc8
  800183a:	f7ff f819 	bl	8000870 <HAL_Delay>
 			BSP_LED_Off(LED1);
  800183e:	2000      	movs	r0, #0
  8001840:	f7fe fec0 	bl	80005c4 <BSP_LED_Off>
-			HAL_Delay(300);
- 8001844:	f44f 7096 	mov.w	r0, #300	; 0x12c
+			HAL_Delay(600);
+ 8001844:	f44f 7016 	mov.w	r0, #600	; 0x258
  8001848:	f7ff f812 	bl	8000870 <HAL_Delay>
 		if(BSP_PB_GetState(BUTTON_USER)){
  800184c:	e7eb      	b.n	8001826 <main+0x1a>
